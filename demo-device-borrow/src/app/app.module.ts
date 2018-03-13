@@ -3,11 +3,13 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
+import { DeviceBorrowComponent } from './device-borrow/device-borrow.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    DeviceBorrowComponent
   ],
   imports: [
     BrowserModule
