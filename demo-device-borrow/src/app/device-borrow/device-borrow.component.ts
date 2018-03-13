@@ -17,9 +17,19 @@ export class DeviceBorrowComponent implements OnInit {
 		{ id: 6, name: 'Iphone 8 Plus', osv: 'IOS 11.2', manu: 'Apple Inc', memorized: true }
 	];
 
-	constructor() { }
+	constructor() { };
 
 	ngOnInit() {
-	}
+	};
 
+	// filter status
+	filterStatus = 'view_all';
+	
+	// check for filter
+	getFilterStatus(memorized: boolean) {
+		const viewAll = this.filterStatus==='view_all';
+		const forViewBorrow = this.filterStatus === 'devAvailable' && memorized;
+		const forViewReturn = this.filterStatus === 'devUsing' && !memorized;
+		return viewAll || forViewBorrow || forViewReturn
+	};
 }

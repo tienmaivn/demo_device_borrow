@@ -1,3 +1,19 @@
+	
+	<!-- Filter tool -->
+	<div class="form-inline">
+		<div class="form-group">
+			<label>Filter</label>
+		</div>
+		<div class="form-group mx-sm-3">
+			<select class="form-control form-control-sm custom-select" [(ngModel)]="filterStatus">
+				<option value="view_all">View All</option>
+				<option value="devAvailable">View Available</option>
+				<option value="devUsing">View Using</option>
+			</select>
+		</div>
+	</div>
+
+	<!-- table device -->
 	<table class="table table-bordered table-hover table-sm mt-1">
 		<thead>
 			<tr class="table-info">
@@ -12,7 +28,7 @@
 		<tbody *ngFor="let device of arrDevices">
 			
 			<!-- background color change flow 'memorized' -->
-			<tr [class.text-success]="device.memorized" [class.text-warning]="!device.memorized">
+			<tr [class.text-success]="device.memorized" [class.text-warning]="!device.memorized" *ngIf="getFilterStatus(device.memorized)">
 				<td>
 					{{ device.name }}
 				</td>
@@ -24,6 +40,7 @@
 				<td>
 					{{ device.manu }}
 				</td>
+				
 				<!-- get device's status -->
 				<td>{{ device.memorized ? "Available" : "Using" }}</td>
 

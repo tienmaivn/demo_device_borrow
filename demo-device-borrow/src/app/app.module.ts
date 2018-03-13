@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { DeviceBorrowComponent } from './device-borrow/device-borrow.component';
@@ -12,7 +12,8 @@ import { DeviceBorrowComponent } from './device-borrow/device-borrow.component';
     DeviceBorrowComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
