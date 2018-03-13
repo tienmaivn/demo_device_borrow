@@ -22,9 +22,15 @@ export class DeviceBorrowComponent implements OnInit {
 	ngOnInit() {
 	};
 
+	// device remove
+	deviceRemove(id: number){
+		const index = this.arrDevices.findIndex(device => device.id === id);
+		this.arrDevices.splice(index, 1);
+	};
+
 	// filter status
 	filterStatus = 'view_all';
-	
+
 	// check for filter
 	getFilterStatus(memorized: boolean) {
 		const viewAll = this.filterStatus==='view_all';

@@ -40,7 +40,7 @@
 				<td>
 					{{ device.manu }}
 				</td>
-				
+
 				<!-- get device's status -->
 				<td>{{ device.memorized ? "Available" : "Using" }}</td>
 
@@ -56,7 +56,7 @@
 					</button>
 				</td>
 
-				<td class="text-center"><button class="btn btn-danger btn-sm">X</button></td>
+				<td class="text-center"><button class="btn btn-danger btn-sm" (click)="deviceRemove(device.id)">X</button></td>
 			</tr>
 		</tbody>
 	</table>
